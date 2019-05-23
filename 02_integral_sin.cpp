@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <cmath>
 
 #include <madness/mra/mra.h>
 
@@ -19,7 +20,7 @@ int main(int argc, char** argv) {
 
     if(world.rank() == 0) print("");
 
-    FunctionDefaults<1>::set_cubic_cell(0.0, 10.0);
+    FunctionDefaults<1>::set_cubic_cell(0.0, M_PI);
     real_function_1d f = real_factory_1d(world).f(my_func);
 
     // integral of the function over the whole domain can be calculated using trace.
